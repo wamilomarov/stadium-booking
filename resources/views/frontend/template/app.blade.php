@@ -6,6 +6,7 @@
     <title>Tailwind Login Template</title>
     <meta name="author" content="David Grzyb">
     <meta name="description" content="">
+    @livewireStyles
 
     <link rel="stylesheet" href="{{asset('css/flowbite.css')}}"/>
 
@@ -91,6 +92,7 @@
 </nav>
 {{--@endauth--}}
 @yield('body')
+@livewireScripts
 <script src="{{asset('js/flowbite.js')}}"></script>
 <script src="{{asset('js/datepicker.js')}}"></script>
 

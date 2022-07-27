@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property int $id
@@ -14,6 +16,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $photo_path
  * @property string $photo
  * @property boolean $is_working
+ *
+ * @property Collection $schedule
+ * @property Collection $bookings
  */
 class Stadium extends Model
 {
@@ -27,4 +32,14 @@ class Stadium extends Model
         'photo_path',
         'is_working',
     ];
+
+    public function schedule(): HasMany
+    {
+        return $this->hasMany(Schedule::class);
+    }
+
+    public function bookings(): HasMany
+    {
+        return $this->hasMany(Booking::class);
+    }
 }
