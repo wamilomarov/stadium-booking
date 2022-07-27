@@ -14,8 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('frontend.home');
+})->name('home');
+Route::get('/bookings', function () {
+    return view('frontend.bookings');
+})->name('bookings');
 
 Route::view('login', 'frontend.auth.login')->name('login.view');
 Route::view('register', 'frontend.auth.register')->name('register.view');
